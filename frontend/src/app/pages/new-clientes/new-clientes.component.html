@@ -1,0 +1,83 @@
+<div class="p-6 max-w-md mx-auto">
+
+  <h1 class="text-xl font-bold mb-6">
+    Novo Cliente
+  </h1>
+
+  <form [formGroup]="form" class="space-y-4">
+
+    <div>
+      <input 
+        type="text"
+        placeholder="Nome"
+        formControlName="name"
+        class="border w-full p-2 rounded"
+      />
+      <small *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
+        Nome é obrigatório
+      </small>
+    </div>
+
+    <div>
+      <input 
+        type="text"
+        placeholder="CPF"
+        formControlName="cpf"
+        class="border w-full p-2 rounded"
+      />
+      <small *ngIf="form.get('cpf')?.touched && form.get('cpf')?.invalid">
+        CPF é obrigatório
+      </small>
+    </div>
+
+    <div>
+      <input 
+        type="text"
+        placeholder="CNPJ"
+        formControlName="cnpj"
+        class="border w-full p-2 rounded"
+      />
+      <small *ngIf="form.get('cnpj')?.touched && form.get('cnpj')?.invalid">
+        CNPJ é obrigatório
+      </small>
+    </div>
+
+    <div>
+      <input 
+        type="text"
+        placeholder="Telefone"
+        formControlName="cellphone"
+        class="border w-full p-2 rounded"
+      />
+      <small *ngIf="form.get('cellphone')?.touched && form.get('cellphone')?.invalid">
+        Telefone é obrigatório
+      </small>
+    </div>
+
+    <div>
+      <input 
+        type="email"
+        placeholder="Email"
+        formControlName="email"
+        class="border w-full p-2 rounded"
+      />
+      <small *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['required']">
+        Email é obrigatório
+      </small>
+      <small *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['email']">
+        Email inválido
+      </small>
+    </div>
+
+    <button 
+      type="button"
+      (click)="save()"
+      class="bg-blue-600 text-white px-4 py-2 rounded cursor-pointer w-full"
+    >
+      Salvar Cliente
+    </button>
+
+  </form>
+
+</div>
+

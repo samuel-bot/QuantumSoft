@@ -1,0 +1,29 @@
+<div class="p-6">
+
+    <div class="flex justify-between items-center mb-6">
+        <h1 class="text-xl font-bold">
+            Clientes
+        </h1>
+
+        <button type="button" routerLink="/clients/new"
+            class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 cursor-pointer">
+            Novo Cliente
+        </button>
+
+
+
+    </div>
+
+    @for (client of clients; track client.id) {
+    <div class="border p-3 mb-3 rounded">
+
+        <div><strong>Nome:</strong> {{ client.name }}</div>
+        <div><strong>CPF:</strong> {{ client.cpf }}</div>
+        <div><strong>CNPJ:</strong> {{ client.cnpj }}</div>
+        <div><strong>Cellphone:</strong> {{ client.cellphone }}</div>
+        <div><strong>Email:</strong> {{ client.email }}</div>
+
+    </div>
+    }
+
+</div>
